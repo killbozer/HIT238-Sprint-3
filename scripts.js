@@ -2,7 +2,7 @@
 function showMembers(jsonObj) {
     var items = jsonObj['appMembers'];
 
-    for (var index = 0; index < items.length; i++) {
+    for (var index = 0; index < items.length; index++) {
 
         var target = document.getElementById("result");
         var contain = document.createElement('div');
@@ -10,7 +10,7 @@ function showMembers(jsonObj) {
         var info = document.createElement('div');
         var text = document.createElement('p');
 
-        text.textContent = 'Bio: ' + items[index].bio + 'Location: ' + items[index].loc;
+        text.textContent = 'Bio: ' + items[index].bio + document.createElement('br ') + 'Location: ' + items[index].loc;
 
         target.appendChild(contain);
         contain.appendChild(pic);
