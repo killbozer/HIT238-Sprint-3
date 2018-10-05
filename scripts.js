@@ -36,14 +36,14 @@ function filterOptions() {
 
     locFil.textContent = 'Filter by: '
 
-    contain.appendChild(mid);
-    locFil.appendChild(contain);  
+    mid.appendChild(contain);
+    contain.appendChild(locFil);  
 
 
 }
 
 
-
+document.getElementById("search").addEventListener("mouseover", filterOptions)
 
 
 
