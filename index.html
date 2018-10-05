@@ -16,15 +16,25 @@
                 <p>My profile<br />Settings<br />Logout</p>
             </div>
         </div>
-        <div class ="middle">
-            <label>Search Bar:</label>
-            <input />
+        <div class="middle" id="filter">
+            <!-- dropdown menu heavily used from https://css-tricks.com/solved-with-css-dropdown-menus/-->
+            <nav>
+                <ul>
+                    <li>
+                        Filter by location:
+                        <ul id="options">
+                            <li>Charles Darwin</li>
+                            <li>Flinders</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
         <div class="bottom" id="result">
 
-            </div>
         </div>
-    </div>
+     </div>
 
     <script src="scripts.js"></script>
 </body>

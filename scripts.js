@@ -29,9 +29,16 @@ function showMembers(jsonObj) {
 
 
 
+selector = document.getElementById("options").childNodes;
 
+for (index = 0; index < selector.length; index++) {
+    selector[index].addEventListener("click", function(event) {
+        if (selector.textContent == "Flinders") {
 
-
+        console.log("Flinders Selected")
+        }
+    })
+}
 
 var requestURL = "db.json";
 var request = new XMLHttpRequest();
