@@ -34,17 +34,23 @@ function filterOptions() {
     var contain = document.createElement('div');
     var locFil = document.createElement('p');
 
-    locFil.textContent = 'Filter by: '
+    locFil.textContent = 'Filter by: ';
+
+    contain.classList.add("options");
+    contain.id = "options";
 
     mid.appendChild(contain);
     contain.appendChild(locFil);  
-
-
+  
 }
 
+function filterRemove() {
 
-document.getElementById("search").addEventListener("mouseover", filterOptions)
+    var del = document.getElementById("options");
+    var contain = document.getElementById("filter");
 
+    contain.removeChild(del);
+}
 
 
 var requestURL = "db.json";
