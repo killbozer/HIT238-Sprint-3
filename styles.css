@@ -19,6 +19,7 @@ p {
 .logo {
     float: left;
     min-width: 100px;
+    background-image: url(icons/logo.png);
 }
 .settings, .logo {
     height: 100px;
@@ -54,11 +55,26 @@ p {
 
 
 
-/* dropdown menu css heavily used from https://css-tricks.com/solved-with-css-dropdown-menus/ */
+nav {
+    width: 160px;
+    height: 55px;
+
+}
+
+.items {
+    background-color: lightgray;
+    border: solid #555656;
+    border-radius: 10px;
+}
+
+
+/* dropdown menu css heavily used from https://css-tricks.com/solved-with-css-dropdown-menus/ 
+    styling done by me  */
 ul {
     list-style: none;
     margin: 0;
     padding-left: 0;
+
 }
 
 li {
@@ -67,10 +83,13 @@ li {
     padding: 1rem;
     position: relative;
     text-decoration: none;
+    width:120px;
+    
 }
 
 li:hover {
     cursor: pointer;
+    background-color: darkgray;
     }
 
 ul li ul {

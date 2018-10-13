@@ -4,7 +4,7 @@ function showMembers(jsonObj) {
 
     for (var index = 0; index < items.length; index++) {
 
-        var target = document.getElementById("result");
+        var target = document.getElementById('result');
         var contain = document.createElement('div');
         var pic = document.createElement('div');
         var info = document.createElement('div');
@@ -16,6 +16,7 @@ function showMembers(jsonObj) {
         text.textContent += 'Location: ' + items[index].loc;
 
         contain.classList.add("result");
+        contain.id = "result";
         pic.classList.add("pic" + [index]);
         info.classList.add("info");
 
@@ -27,18 +28,36 @@ function showMembers(jsonObj) {
 
 }
 
+function filter1() {
 
-
-selector = document.getElementById("options").childNodes;
-
-for (index = 0; index < selector.length; index++) {
-    selector[index].addEventListener("click", function(event) {
-        if (selector.textContent == "Flinders") {
-
-        console.log("Flinders Selected")
+    var classes = document.getElementsByClassName('result');
+    for (var index = 0; index < classes.length; index++) {
+        if (classes[index].innerHTML.includes("Charles Darwin")) {
         }
-    })
+        else {
+            classes[index].parentNode.removeChild(classes[index])
+            index -= 1
+        }
+    }
 }
+
+function filter2() {
+
+    var classes = document.getElementsByClassName('result');
+    for (var index = 0; index < classes.length; index++) {
+        if (classes[index].innerHTML.includes("Flinders")) {
+        }
+        else {
+            classes[index].parentNode.removeChild(classes[index])
+            index -= 1
+        }
+    }
+}
+
+var loc1 = document.getElementById('o1');
+var loc2 = document.getElementById('o2');
+loc1.addEventListener("click", filter1, false);
+loc2.addEventListener("click", filter2, false);
 
 var requestURL = "db.json";
 var request = new XMLHttpRequest();
@@ -46,6 +65,17 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
 
 request.onload = function () {
 
